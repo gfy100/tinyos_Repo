@@ -4,7 +4,7 @@ README for Blink
 
 Author/Contact:
 
-  tinyos-help@millennium.berkeley.edu
+  fengyuan.gong@gmail.com 
 
 Description:
 
@@ -17,6 +17,8 @@ Description:
   both) of the nodes stops changing and hold steady, then that node is
   no longer receiving any messages from the other node.
 
+Added Feature:
+  enable printf to transmit data out to serial port.
 
 Tools:
 

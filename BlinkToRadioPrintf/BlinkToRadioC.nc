@@ -49,6 +49,7 @@
  */
 #include <Timer.h>
 #include "BlinkToRadio.h"
+#include "printf.h"
 
 module BlinkToRadioC {
   uses interface Boot;
@@ -124,6 +125,9 @@ implementation {
     if (len == sizeof(BlinkToRadioMsg)) {
       BlinkToRadioMsg* btrpkt = (BlinkToRadioMsg*)payload;
       setLeds(btrpkt->counter);
+      /* Add printf */
+      printf("NodeID:%u -- received from nodeID:%u -- pkt_Num:%u\n",TOS_NODE_ID,btrpkt->nodeid,btrpkt->counter);
+      printfflush();
     }
     return msg;
   }

@@ -47,8 +47,10 @@
  * @author Prabal Dutta
  * @date   Feb 1, 2006
  */
+#define NEW_PRINTF_SEMANTICS
 #include <Timer.h>
 #include "BlinkToRadio.h"
+#include "printf.h"
 
 configuration BlinkToRadioAppC {
 }
@@ -60,6 +62,8 @@ implementation {
   components ActiveMessageC;
   components new AMSenderC(AM_BLINKTORADIO);
   components new AMReceiverC(AM_BLINKTORADIO);
+  components PrintfC;
+  components SerialStartC;
 
   App.Boot -> MainC;
   App.Leds -> LedsC;
